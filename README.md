@@ -18,5 +18,7 @@ GRAD-CAM is a technique for visualizing the important regions in an image that c
 
 - Overlay the heatmap on the input image: Normalize the heatmap and overlay it on the input image to visually indicate the important regions.
 
+- Create bounding boxes using opencv methods over the detected class.
+
 - Save the result: Save the resulting heatmap and the overlaid image to visualize the important regions in the input image that contributed the most to the prediction of the target class.
 
