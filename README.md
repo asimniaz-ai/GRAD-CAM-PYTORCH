@@ -20,4 +20,3 @@ GRAD-CAM is a technique for visualizing the important regions in an image that c
 
 - Save the result: Save the resulting heatmap and the overlaid image to visualize the important regions in the input image that contributed the most to the prediction of the target class.
 
-- These are the basic steps to implement GRAD-CAM in PyTorch. However, you may need to make some modifications based on the architecture of your model.
