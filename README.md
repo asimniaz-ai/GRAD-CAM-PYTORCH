@@ -2,6 +2,12 @@
 
 This repository is the implementation of GRAD-CAM with VGG19 in PyTorch framework. The reference paper is [Grad-CAM](https://openaccess.thecvf.com/content_iccv_2017/html/Selvaraju_Grad-CAM_Visual_Explanations_ICCV_2017_paper.html).
 
+This code is an implementation of Grad-CAM (Gradient-weighted Class Activation Mapping), a method for visualizing the regions of an image that contribute most to the prediction of a deep learning model. Grad-CAM uses the gradient information of the final prediction with respect to the activations of the last convolutional layer to create a heatmap highlighting the most important regions in the image.
+
+The code uses the pre-trained VGG19 model from the torchvision library and creates a custom class VGG which inherits from nn.Module and disects the network to its last convolutional layer (layer 36). The custom class defines a hook function activations_hook to store the gradients of the activations during the backward pass and a method get_activations_gradient to retrieve the gradients. The method get_activations is used to extract the activations of the last convolutional layer.
+
+A single image is loaded from the ./data/ directory using a data loader and passed through the model to get its prediction. The gradients are computed using the backward method of the final prediction and the activations and gradients are used to compute the heatmap using the Grad-CAM algorithm. The heatmap is superimposed on the original image using OpenCV and the result is displayed using Matplotlib.
+
 ## Brief detail and Steps to Follow
 
 GRAD-CAM is a technique for visualizing the important regions in an image that contributed the most to a specific prediction made by a deep learning model. Here are the steps to implement GRAD-CAM in PyTorch:
